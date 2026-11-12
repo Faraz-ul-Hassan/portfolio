@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Faraz Ul Hassan — Portfolio
 
-## Getting Started
+Personal portfolio built with **Next.js (App Router)** and **Tailwind CSS**, ready to deploy on **Vercel** and serve on `farazulhassan.me`.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/` — routes/pages (`/`, `/about`, `/projects`, `/skills`, `/experience`, `/contact`)
+- `src/components/` — layout, sections, and UI components
+- `src/lib/site.ts` — site-wide config (name, role, links, email, domain)
+- `src/lib/projects.ts` — **project data (add new projects here)**
+- `src/lib/skills.ts` — skills data
+- `src/lib/experience.ts` — experience/education data
+- `src/types/` — shared TypeScript types
 
-## Learn More
+## Adding a new project
 
-To learn more about Next.js, take a look at the following resources:
+Edit [`src/lib/projects.ts`](src/lib/projects.ts) and append a new object to the `projects` array:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```ts
+{
+  title: "Project Name",
+  description: "Short description of what it does and why it matters.",
+  techStack: ["Next.js", "TypeScript"],
+  githubUrl: "https://github.com/...", // optional
+  liveUrl: "https://...",             // optional
+  featured: false,                    // set true to show on home page
+  highlights: [                       // optional bullet points
+    "Key outcome or feature",
+  ],
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No page/component changes are required — the Projects page and featured section render from this data.
 
-## Deploy on Vercel
+## Deploying to Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this `portfolio` project to a GitHub repository (or import the folder).
+2. In [Vercel](https://vercel.com/new), import the repo and set the root directory to `portfolio` if needed.
+3. Use defaults: Framework **Next.js**, Build `npm run build`, Output `.next`.
+4. In **Project Settings → Domains**, add `farazulhassan.me` and `www.farazulhassan.me`.
+5. Ensure your Namecheap DNS records point to Vercel as instructed in the Vercel dashboard (typically an `A` record for apex and `CNAME` for `www`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+- Update personal details/links in `src/lib/site.ts`.
+- Replace `public/` assets (favicon, resume, images) as needed. A resume download button expects `/resume.pdf` in `public/`.
+- Edit theme/content in `src/app/globals.css` and components under `src/components/`.

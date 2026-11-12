@@ -2,10 +2,11 @@ export interface Project {
   title: string;
   description: string;
   techStack: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
-  imageUrl: string;
-  featured: boolean;
+  imageUrl?: string;
+  featured?: boolean;
+  highlights?: string[];
 }
 
 export interface SkillCategory {
@@ -17,7 +18,7 @@ export interface TimelineEntry {
   title: string;
   organization: string;
   startDate: string;
-  endDate?: string; // optional, since current roles have no end date
+  endDate?: string;
   description: string;
   bullets?: string[];
 }
