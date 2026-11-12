@@ -40,14 +40,14 @@ export default function Navbar() {
     <nav
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
-          ? "border-gray-200/70 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80"
-          : "border-transparent bg-white/70 backdrop-blur-sm dark:bg-gray-950/60"
+          ? "border-stone-200/70 bg-white/80 backdrop-blur-md dark:border-stone-800 dark:bg-stone-950/80"
+          : "border-transparent bg-white/70 backdrop-blur-sm dark:bg-stone-950/60"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-gray-900 transition hover:text-emerald-600 dark:text-white dark:hover:text-emerald-400"
+          className="text-lg font-semibold tracking-tight text-stone-900 transition hover:text-emerald-600 dark:text-white dark:hover:text-emerald-400"
         >
           {siteConfig.name}
         </Link>
@@ -61,8 +61,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
-                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
+                    ? "bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-300"
+                    : "text-stone-600 hover:bg-stone-100 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-white"
                 }`}
               >
                 {link.name}
@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-2 md:flex">
           <button
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 text-gray-700 transition hover:bg-gray-100 dark:border-gray-800 dark:text-gray-200 dark:hover:bg-gray-800"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-stone-200 text-stone-700 transition hover:bg-stone-100 dark:border-stone-800 dark:text-stone-200 dark:hover:bg-stone-800"
             aria-label="Toggle theme"
           >
             {mounted ? (
@@ -86,7 +86,7 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download
-            className="inline-flex items-center gap-2 rounded-md bg-emerald-600 px-3 py-2 text-sm font-medium text-white transition hover:bg-emerald-700"
+            className="inline-flex items-center gap-2 rounded-md bg-amber-700 px-3 py-2 text-sm font-medium text-white transition hover:bg-amber-800"
           >
             <Download className="h-4 w-4" /> Resume
           </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <button
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 text-gray-700 dark:border-gray-800 dark:text-gray-200"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-stone-200 text-stone-700 dark:border-stone-800 dark:text-stone-200"
             aria-label="Toggle theme"
           >
             {mounted ? (
@@ -106,7 +106,7 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => setIsOpen((v) => !v)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 text-gray-700 dark:border-gray-800 dark:text-gray-200"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-stone-200 text-stone-700 dark:border-stone-800 dark:text-stone-200"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -115,7 +115,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-950 md:hidden">
+        <div className="border-t border-stone-200 bg-white px-4 py-3 dark:border-stone-800 dark:bg-stone-950 md:hidden">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => {
               const active = pathname === link.href;
@@ -125,8 +125,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`rounded-md px-3 py-2 text-sm font-medium ${
                     active
-                      ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
-                      : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                      ? "bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-300"
+                      : "text-stone-700 hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-stone-800"
                   }`}
                 >
                   {link.name}
@@ -136,7 +136,7 @@ export default function Navbar() {
             <a
               href="/resume.pdf"
               download
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-emerald-600 px-3 py-2 text-sm font-medium text-white"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-amber-700 px-3 py-2 text-sm font-medium text-white"
             >
               <Download className="h-4 w-4" /> Download Resume
             </a>
