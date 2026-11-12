@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Portfolio of Faraz Ul Hassan — building full-stack products, APIs, and machine learning applications with a focus on practical, user-centered solutions.",
   url: "https://farazulhassan.me",
-  email: "farazulhassan.dev@gmail.com",
+  email: "farazulhassan25@gmail.com",
   github: "https://github.com/Faraz-ul-Hassan",
   linkedin: "https://linkedin.com/in/faraz-ul-hassan-897181343",
   location: "Lahore, Pakistan",
